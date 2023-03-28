@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: faizal-deployment
+  labels:
+    app: faizal
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: faizal
+  template:
+    metadata:
+      labels:
+        app: faizal
+    spec:
+      containers:
+      - name: web
+        image: kedahs03/website06
+        ports:
+        - containerPort: 80
